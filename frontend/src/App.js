@@ -6,10 +6,12 @@ import CarShowcase from "./components/CarShowcase";
 import RacingResults from "./components/RacingResults";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { MouseFollower3D } from "./components/Racing3DElements";
 
 function App() {
   return (
     <div className="App">
+      <MouseFollower3D />
       <Header />
       <main>
         <Hero />
