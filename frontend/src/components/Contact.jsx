@@ -167,7 +167,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="btn-primary w-full">
+                <Button type="submit" className="btn-primary btn-hover-scale interactive-3d w-full">
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>
