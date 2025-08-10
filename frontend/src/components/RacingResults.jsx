@@ -42,22 +42,26 @@ const RacingResults = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {mockData.results.map((result) => (
-            <Card key={result.id} className="card-hover-effect bg-gray-800 border-gray-700">
+          {mockData.results.map((result, index) => (
+            <Card key={result.id} className="result-3d-card card-hover-effect bg-gray-800 border-gray-700">
               <CardHeader className="flex flex-row items-center justify-between pb-4">
-                <div>
-                  <CardTitle className="heading-3 text-lime-400 mb-2">
+                <div className="relative">
+                  <CardTitle className="heading-3 text-lime-400 mb-2 depth-layer-2">
                     {result.race}
                   </CardTitle>
-                  <p className="caption text-gray-400">
+                  <p className="caption text-gray-400 depth-layer-1">
                     {new Date(result.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
                     })}
                   </p>
+                  {/* 3D Racing Track Element */}
+                  <div className="absolute -top-2 -left-2 w-8 h-8 opacity-20">
+                    <div className="racing-track-3d w-full h-full border-2 border-lime-400 rounded-full"></div>
+                  </div>
                 </div>
-                <Badge className={`${getPositionColor(result.position)} flex items-center gap-2`}>
+                <Badge className={`${getPositionColor(result.position)} flex items-center gap-2 interactive-3d depth-layer-3`}>
                   {getPositionIcon(result.position)}
                   P{result.position}
                 </Badge>
