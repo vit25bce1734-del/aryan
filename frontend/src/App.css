@@ -201,23 +201,153 @@ body {
 .pad-96 { padding: 96px; }
 .pad-120 { padding: 120px; }
 
-/* Animation Guidelines */
+/* 3D Animation Guidelines */
 .btn-hover-scale {
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
 }
 .btn-hover-scale:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) rotateX(5deg) translateZ(10px);
+  box-shadow: 0 10px 30px rgba(217, 251, 6, 0.3);
 }
 .btn-hover-scale:active {
-  transform: scale(0.98);
+  transform: scale(0.98) rotateX(-2deg) translateZ(2px);
 }
 
 .card-hover-effect {
   transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 .card-hover-effect:hover {
   background-color: var(--border-medium);
-  transform: translateY(-2px);
+  transform: translateY(-10px) rotateX(8deg) rotateY(2deg) translateZ(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Car Showcase Effects */
+.car-3d-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.car-3d-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.car-3d-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) translateZ(30px);
+}
+
+.car-3d-card .car-image {
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.car-3d-card:hover .car-image {
+  transform: rotateY(-5deg) scale(1.05);
+}
+
+/* 3D Racing Results Cards */
+.result-3d-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.result-3d-card:hover {
+  transform: rotateX(10deg) rotateY(5deg) translateZ(25px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(217, 251, 6, 0.2);
+}
+
+/* 3D Floating Elements */
+@keyframes float3d {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateZ(0deg); 
+  }
+  25% { 
+    transform: translateY(-10px) rotateX(2deg) rotateZ(1deg); 
+  }
+  50% { 
+    transform: translateY(-5px) rotateX(-1deg) rotateZ(-0.5deg); 
+  }
+  75% { 
+    transform: translateY(-15px) rotateX(1deg) rotateZ(0.5deg); 
+  }
+}
+
+.floating-3d {
+  animation: float3d 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3D Stats Animation */
+.stats-3d {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.stats-3d:hover {
+  transform: rotateX(15deg) rotateY(5deg) translateZ(15px);
+  text-shadow: 0 5px 15px rgba(217, 251, 6, 0.5);
+}
+
+/* 3D Hero Parallax Effect */
+.hero-3d-layer {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* 3D Interactive Timeline */
+.timeline-3d {
+  transform-style: preserve-3d;
+  perspective: 1500px;
+}
+
+.timeline-item-3d {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+}
+
+.timeline-item-3d:hover {
+  transform: translateX(20px) rotateY(15deg) translateZ(30px);
+}
+
+/* 3D Racing Track Animation */
+@keyframes racetrack3d {
+  0% { 
+    transform: perspective(1000px) rotateX(60deg) rotateY(0deg) translateZ(0px); 
+  }
+  100% { 
+    transform: perspective(1000px) rotateX(60deg) rotateY(360deg) translateZ(0px); 
+  }
+}
+
+.racing-track-3d {
+  animation: racetrack3d 20s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3D Depth Layers */
+.depth-layer-1 { transform: translateZ(10px); }
+.depth-layer-2 { transform: translateZ(20px); }
+.depth-layer-3 { transform: translateZ(30px); }
+.depth-layer-4 { transform: translateZ(40px); }
+
+/* 3D Interactive Elements */
+.interactive-3d {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.interactive-3d:hover {
+  transform: rotateX(10deg) rotateY(10deg) translateZ(20px);
 }
 
 /* Hero Section - High Impact Pattern */
