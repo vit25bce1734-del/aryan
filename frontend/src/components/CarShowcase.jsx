@@ -70,7 +70,7 @@ const CarShowcase = () => {
                   </div>
                 </div>
                 
-                <Button className="btn-secondary w-full mt-6">
+                <Button className="btn-secondary btn-hover-scale w-full mt-6 interactive-3d">
                   View Specifications
                 </Button>
               </CardContent>
