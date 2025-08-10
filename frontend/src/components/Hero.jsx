@@ -27,30 +27,30 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button className="btn-primary">
+            <Button className="btn-primary btn-hover-scale interactive-3d">
               View Our Fleet
             </Button>
-            <Button className="btn-secondary" variant="outline">
+            <Button className="btn-secondary btn-hover-scale interactive-3d" variant="outline">
               Racing Results
             </Button>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-            <div className="text-center">
-              <div className="heading-2 mb-2">{mockData.stats.victories}</div>
-              <div className="caption">Victories</div>
+            <div className="text-center stats-3d">
+              <div className="heading-2 mb-2 depth-layer-3">{mockData.stats.victories}</div>
+              <div className="caption depth-layer-1">Victories</div>
             </div>
-            <div className="text-center">
-              <div className="heading-2 mb-2">{mockData.stats.podiums}</div>
-              <div className="caption">Podiums</div>
+            <div className="text-center stats-3d">
+              <div className="heading-2 mb-2 depth-layer-3">{mockData.stats.podiums}</div>
+              <div className="caption depth-layer-1">Podiums</div>
             </div>
-            <div className="text-center">
-              <div className="heading-2 mb-2">{mockData.stats.championships}</div>
-              <div className="caption">Championships</div>
+            <div className="text-center stats-3d">
+              <div className="heading-2 mb-2 depth-layer-3">{mockData.stats.championships}</div>
+              <div className="caption depth-layer-1">Championships</div>
             </div>
-            <div className="text-center">
-              <div className="heading-2 mb-2">{new Date().getFullYear() - mockData.stats.founded}</div>
-              <div className="caption">Years Racing</div>
+            <div className="text-center stats-3d">
+              <div className="heading-2 mb-2 depth-layer-3">{new Date().getFullYear() - mockData.stats.founded}</div>
+              <div className="caption depth-layer-1">Years Racing</div>
             </div>
           </div>
         </div>
