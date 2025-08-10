@@ -92,7 +92,7 @@ const RacingResults = () => {
         </div>
         
         <div className="text-center mt-12">
-          <button className="btn-primary">
+          <button className="btn-primary btn-hover-scale interactive-3d">
             View All Results
           </button>
         </div>
