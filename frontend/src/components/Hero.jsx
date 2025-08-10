@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { mockData } from '../data/mockData';
+import { Racing3DCar, Speed3DIndicator, RacingTrack3D } from './Racing3DElements';
 
 const Hero = () => {
   return (
@@ -14,15 +15,28 @@ const Hero = () => {
         <div className="hero-overlay"></div>
       </div>
       
+      {/* 3D Racing Track Element */}
+      <div className="absolute top-20 right-10 w-32 h-16 opacity-40">
+        <RacingTrack3D />
+      </div>
+      
+      {/* 3D Floating Cars */}
+      <div className="absolute top-32 right-32 opacity-60">
+        <Racing3DCar className="floating-3d" />
+      </div>
+      <div className="absolute bottom-32 right-20 opacity-40">
+        <Racing3DCar className="floating-3d" style={{animationDelay: '2s'}} />
+      </div>
+      
       <div className="container">
-        <div className="hero-content">
-          <h1 className="brand-display mb-6">
+        <div className="hero-content relative">
+          <h1 className="brand-display mb-6 depth-layer-4">
             {mockData.team.name}
           </h1>
-          <p className="body-large mb-8 max-w-2xl">
+          <p className="body-large mb-8 max-w-2xl depth-layer-3">
             {mockData.team.tagline}
           </p>
-          <p className="body-medium mb-12 text-gray-300 max-w-xl">
+          <p className="body-medium mb-12 text-gray-300 max-w-xl depth-layer-2">
             {mockData.team.heroText}
           </p>
           
@@ -52,6 +66,11 @@ const Hero = () => {
               <div className="heading-2 mb-2 depth-layer-3">{new Date().getFullYear() - mockData.stats.founded}</div>
               <div className="caption depth-layer-1">Years Racing</div>
             </div>
+          </div>
+          
+          {/* 3D Speed Indicator */}
+          <div className="absolute -bottom-10 -right-20 opacity-70">
+            <Speed3DIndicator speed={Math.floor(Math.random() * 300 + 100)} />
           </div>
         </div>
       </div>
