@@ -15,22 +15,29 @@ const CarShowcase = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mockData.cars.map((car) => (
-            <Card key={car.id} className="card-hover-effect bg-gray-900 border-gray-700 overflow-hidden">
+        <div className="car-3d-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {mockData.cars.map((car, index) => (
+            <Card key={car.id} className="car-3d-card card-hover-effect bg-gray-900 border-gray-700 overflow-hidden">
               <div className="aspect-video relative overflow-hidden">
                 <img 
                   src={car.image} 
                   alt={car.name}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="car-image w-full h-full object-cover transition-all duration-500"
                 />
                 <Badge 
-                  className={`absolute top-4 right-4 ${
+                  className={`absolute top-4 right-4 interactive-3d ${
                     car.status === 'Active' ? 'bg-green-600' : 'bg-yellow-600'
                   }`}
                 >
                   {car.status}
                 </Badge>
+                {/* 3D Racing Stripes */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className={`absolute top-0 left-0 w-2 h-full bg-lime-400 transform origin-top floating-3d`} 
+                       style={{animationDelay: `${index * 0.5}s`}}></div>
+                  <div className={`absolute top-0 right-0 w-2 h-full bg-lime-400 transform origin-top floating-3d`} 
+                       style={{animationDelay: `${index * 0.5 + 0.2}s`}}></div>
+                </div>
               </div>
               
               <CardHeader className="pb-4">
